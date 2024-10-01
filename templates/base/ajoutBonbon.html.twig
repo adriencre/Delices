@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Ajout Bonbon{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="text-center text-primary mb-4">Ajout d'un bonbon</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                {{ form_start(form) }}
+                {{ form_row(form.nom) }}
+                {{ form_row(form.prix) }}
+                {{ form_row(form.gout) }}
+                {{ form_row(form.description) }}
+                {{ form_row(form.ajouter) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

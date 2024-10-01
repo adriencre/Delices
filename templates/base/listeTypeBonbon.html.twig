@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des types de bonbons{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center text-primary mt-4">Liste des types de bonbons</h1>
+        <table class="table table-striped table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">Désignation</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for typeBonbon in typeBonbons|sort((a, b) => a.designation <=> b.designation) %}
+                    <tr>
+                        <td>{{ typeBonbon.designation }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
